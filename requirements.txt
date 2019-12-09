@@ -1,5 +1,5 @@
 aniso8601==8.0.0
-ansible==2.8.0
+ansible==2.8.2
 ansible-lint==4.1.0
 anyconfig==0.9.7
 appnope==0.1.0
