@@ -1,0 +1,30 @@
+Started by user [8mha:////4KUuymtH5Ol/KrAAbK+cxlsj4xzNjhBh/7k9+ZEnS5rnAAAAmR+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAz2EgZe/dLi1CL9rNS87My8YgDGtiJjwgAAAA==[0mjenkins
+Running as SYSTEM
+Building in workspace /var/jenkins_home/workspace/unit-test
+[unit-test] $ /bin/sh -xe /tmp/jenkins7833175137076903009.sh
++ cp -R /opt/app/flask/Dockerfile /opt/app/flask/build.py /opt/app/flask/requirements.txt /opt/app/flask/tester.py .
++ docker build . -t py:test
+Sending build context to Docker daemon  4.862MB
+Step 1/5 : FROM python:3.7
+ ---> fbf9f709ca9f
+Step 2/5 : ADD . /code
+ ---> Using cache
+ ---> 6df4ec3a1b60
+Step 3/5 : WORKDIR /code
+ ---> Using cache
+ ---> 2ac74cc10bbd
+Step 4/5 : RUN pip install -r requirements.txt
+ ---> Using cache
+ ---> 8c68bce5a955
+Step 5/5 : CMD python build.py
+ ---> Using cache
+ ---> d78059c25e55
+Successfully built d78059c25e55
+Successfully tagged py:test
++ docker run --name pythontest -d -p 5000:5000 py:test
+163b42faf428c75765a5ba09e04bedf7389c560c896388b228213a0eaee6eed0
++ python3 -m venv env
++ source ./env/bin/activate
+/tmp/jenkins7833175137076903009.sh: 6: /tmp/jenkins7833175137076903009.sh: source: not found
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE
