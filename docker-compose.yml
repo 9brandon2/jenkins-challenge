@@ -13,6 +13,7 @@ services:
       - ./jenkins/home:/home
       - /var/run/docker.sock:/var/run/docker.sock
       - ./app/:/opt/app/flask/
+      - ./jenkins/config/:/var/jenkins_home/
   flask:
     build: ./app/
     ports:
