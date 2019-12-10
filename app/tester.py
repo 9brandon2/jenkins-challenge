@@ -45,9 +45,6 @@ def test_delete_user():
     birth_year = 1992
     birth_data = {user: birth_year}
     by = Birthyear(birth_data=birth_data)
-    user_list = requests.get('http://0.0.0.0:5000/%s' % user)
-    response = json.loads(user_list.text)
-    uploaded_user = list(response.keys())[0]
     response = by.delete(user)
     assert response == ({}, 204)
 
@@ -57,8 +54,5 @@ def test_unhappy_delete():
     birth_year = 1992
     birth_data = {user: birth_year}
     by = Birthyear(birth_data=birth_data)
-    user_list = requests.get('http://0.0.0.0:5000/%s' % user)
-    response = json.loads(user_list.text)
-    uploaded_user = list(response.keys())[0]
     response = by.delete(wrong_user)
     assert response == 400
